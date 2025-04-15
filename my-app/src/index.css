@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+@layer base {
+    li {
+        @apply cursor-pointer
+    }
+    p {
+        @apply text-gray-400 font-normal
+    }
+    .request-invite {
+        @apply py-2 px-6 bg-linear-to-r from-green-400 to-sky-400 rounded-4xl hidden lg:block text-white
+    }
+}
