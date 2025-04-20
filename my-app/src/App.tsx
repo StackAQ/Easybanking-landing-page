@@ -105,16 +105,18 @@ const App: React.FC = () => {
           </button>
 
           {isOpen && (
-            <div className="p-2 rounded-lg shadow-md bg-white absolute top-4 left-0 pr-6">
-              <ul className="grid gap-3">
-                <li className="hover:text-green-400">About Us</li>
-                <li className="hover:text-green-400">Contact</li>
-                <li className="hover:text-green-400">Blog</li>
-                <li className="hover:text-green-400">Careers</li>
-                <li className="hover:text-green-400">Support</li>
-                <li className="hover:text-green-400">Privacy Policy</li>
-              </ul>
-            </div>
+            <div className="p-4 rounded-xl shadow-lg bg-white absolute top-4 left-0 w-48 transition-all duration-300 ease-in-out">
+  <ul className="grid gap-4">
+    {["About Us", "Contact", "Blog", "Careers", "Support", "Privacy Policy"].map((item) => (
+      <li
+        key={item}
+        className="cursor-pointer transition-colors duration-300 ease-in-out hover:text-green-500"
+      >
+        {item}
+      </li>
+    ))}
+  </ul>
+</div>
           )}
         </nav>
         <div className="bg-neutral-50">
