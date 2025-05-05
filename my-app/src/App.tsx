@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 import {
   FaBars,
   FaFacebook,
@@ -119,7 +120,12 @@ const App: React.FC = () => {
         </nav>
         <div className="bg-neutral-50">
           <div className="flex justify-center items-center flex-col-reverse lg:flex-row gap-10 py-4">
-            <div className="space-y-8 lg:pl-32 font-medium text-center lg:text-left">
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1 }}
+              className="space-y-8 lg:pl-32 font-medium text-center lg:text-left"
+            >
               <h1 className="text-4xl lg:text-5xl text-gray-600">
                 Next generation digital banking
               </h1>
@@ -133,26 +139,44 @@ const App: React.FC = () => {
                   Request Invite
                 </a>
               </div>
-            </div>
-            <div className="w-full overflow-hidden bg-[url('bg-intro-desktop.svg')] bg-no-repeat bg-cover relative">
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1 }}
+              className="w-full overflow-hidden bg-[url('bg-intro-desktop.svg')] bg-no-repeat bg-cover relative"
+            >
               <img src="image-mockups.png " alt="" />
-            </div>
+            </motion.div>
           </div>
         </div>
         <div className="lg:px-32 py-8 bg-neutral-100 px-4">
           <div className="space-y-4">
-            <h2 className="font-normal text-center lg:text-left text-4xl text-gray-600">
+            <motion.h2
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1 }}
+              className="font-normal text-center lg:text-left text-4xl text-gray-600"
+            >
               Why choose Easybanking
-            </h2>
-            <p className="text-center lg:text-left">
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1 }}
+              className="text-center lg:text-left"
+            >
               We leverage Open Banking to turn your bank account into your
               financial hub. Control your finances like never before. Online
               Banking Our modern web and mobile applications allow you to keep
               track of your finances wherever you are in the world.
-            </p>
+            </motion.p>
             <div className="mt-16 grid gap-10 md:grid-cols-2 lg:grid-cols-4 place-items-center">
               {chooseList.map((choose, index) => (
-                <div
+                <motion.div
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 1 }}
                   key={index}
                   className="grid gap-2 place-items-center lg:place-items-start"
                 >
@@ -161,19 +185,27 @@ const App: React.FC = () => {
                     {choose.title}
                   </span>
                   <p className="text-justify">{choose.description}</p>
-                </div>
+                </motion.div>
               ))}
             </div>
           </div>
         </div>
         <div className="lg:px-32 py-8 bg-neutral-50 px-4">
           <div className="space-y-8">
-            <h2 className="font-normal text-center lg:text-left text-4xl text-gray-600">
+            <motion.h2
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1 }}
+              className="font-normal text-center lg:text-left text-4xl text-gray-600"
+            >
               Latest Articles
-            </h2>
+            </motion.h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {articleList.map((article, index) => (
-                <div
+                <motion.div
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 1 }}
                   key={index}
                   className="bg-white grid gap-2 font-normal shadow-md"
                 >
@@ -187,12 +219,17 @@ const App: React.FC = () => {
                     </span>
                     <p className="text-justify">{article.description}</p>
                   </div>
-                </div>
+                </motion.div>
               ))}
             </div>
           </div>
         </div>
-        <footer className="bg-blue-950">
+        <motion.footer
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          className="bg-blue-950"
+        >
           <div className="hidden lg:flex items-center justify-between lg:px-32 lg:py-16">
             <div className="flex justify-center lg:gap-16 items-center">
               <div className="grid lg:gap-12">
@@ -305,7 +342,7 @@ const App: React.FC = () => {
               &copy; Easybank. All Rights Reserved
             </span>
           </div>
-        </footer>
+        </motion.footer>
       </div>
     </div>
   );
